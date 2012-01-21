@@ -1,7 +1,33 @@
-This UObject allow you to :
+This UObject allow you to:
 	- Set an http proxy
-	- Make a GET http request
+	- Make a GET http request 
 	- Use xpath to query page content
 
 My irc bot should use that module soon.
 
+
+Dependencies:
+	- curlpp : http://sourceforge.net/projects/curlpp/
+	- tinyxpath : http://tinyxpath.sourceforge.net/
+
+Compile: 
+	- Set environment var URBI_ROOT to your urbi directory
+	- Set environment var TINYXPATH_ROOT to your tinyxpath directory
+	- Install curlpp
+	- make
+
+Run:
+	make run
+
+Debug xpath queries:
+	Compile with "make debug" and run
+
+Use in urbi :
+	var h = UHttpXPath.new;
+	[00017287] UHttpXPath_0x414c2f38
+	h.setHttpProxy("http://my-http-proxy.com", 3128); // url, port
+	[00024972] 1
+	h.performRequest("http://my-page.com"); // request this page
+	[00036083] 1
+	h.xPathQuery("//my/xpath/query"); // query page content
+	[00047194] "my string result"
