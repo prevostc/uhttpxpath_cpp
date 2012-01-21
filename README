@@ -1,0 +1,7 @@
+This UObject allow you to :
+	- Set an http proxy
+	- Make a GET http request
+	- Use xpath to query page content
+
+My irc bot should use that module soon.
+
